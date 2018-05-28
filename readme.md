@@ -1,4 +1,4 @@
-# Crack Detection 
+## Crack Detection 
 -----------------    
 -----------------   
                                     
@@ -47,8 +47,14 @@ After the data is converted into caffe readable database, the training can happe
 
 Over the training period, the training accuracy will decrease because the model weight get recalculated and it get trained. Validation loss also will fall in starting phase since the model is getting better. However we can expect an increase in validation loss as the training continues. This indicates the the model is getting overfitted with training data. We stop the training at this stage when both training and validation loss is at the minimum.
 
+Caffe training configuration file can be edited for training parameters such as number of iterations, number of iterations between tests, intermediate output file writing frequency.
 
-### 4. Running The Model
+After training, all the weights data will be written to .caffemodel file which is used to run the crack detection program.
+
+.solverstate(file which get saved along with .caffemodel file) can be used for continueing the training if the training get inturruped.
+
+
+## Running The Model
 
 Running or using the pretrained model is simple.
 1. Build the model
