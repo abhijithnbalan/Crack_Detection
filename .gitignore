@@ -1,0 +1,9 @@
+*.png
+*.avi
+*.mp4
+*.jpg
+*.jpeg
+*.log
+*.caffemodel
+/Model/caffe_train/*.*
+!trained_model.caffemodel
