@@ -52,9 +52,16 @@ bool CrackDetection::detect_crack(CaptureFrame input)
     
 
     cv::minMaxLoc(prob.reshape(1,1),0,&confidence,&classIdPoint);
-    
+    std::string res;
     int result = classIdPoint.x;
-    std::cout<<"Prediction = "<<result<<"   Confidence = "<<confidence<<"\n";
+    if(result == 0) res = "CRACK";
+    else if(result == 1) res = "NO CRACK";
+    else 
+    {
+        logger.log_warn("Model output mismatch");
+    }
+
+    std::cout<<"Prediction = "<<res<<"   Confidence = "<<confidence<<"\n";
     cv::waitKey(0);
     if(result == 0) return true;
     else return false;

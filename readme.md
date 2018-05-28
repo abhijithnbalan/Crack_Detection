@@ -50,4 +50,25 @@ Over the training period, the training accuracy will decrease because the model 
 
 ### 4. Running The Model
 
-Running or using the pretrained model is simple. 
+Running or using the pretrained model is simple.
+1. Build the model
+
+    ``` 
+    cd build
+    cmake ..
+    make
+    cd ..
+    ```
+2. Execute the code
+
+    ```
+    cd bin
+    ./CrackDetection <path to image>
+    ```
+
+The output will contain output from network, and the confidence of that output.
+
+Model output : 
+
+    1 : No crack identified
+    2 : Crack identified
